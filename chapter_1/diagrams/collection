@@ -1,0 +1,43 @@
+@startuml
+Container <|-- Collection
+Sized <|-- Collection
+Iterable <|-- Collection
+Iterable <|-- Reversible
+Reversible <|-- Sequence
+Collection <|-- Mapping
+Collection <|-- Set
+
+Container : __contains__()
+Sized : __len__()
+Iterable : __iter__()
+Reversible : __reversed__()
+class Sequence {
+ +index
+ +count
+ +__getItem__()
+ +__contains__()
+}
+class Mapping{
+ +__getitem__()
+ +__contains__()
+ +__eq__()
+ +__ne__()
+ +get()
+ +items()
+ +keys()
+ +values()
+}
+class Set{
+ +isdisjoint()
+ +__le__()
+ +__lt__()
+ +__gt__()
+ +__ge__()
+ +__ne__()
+ +__and__()
+ +__or__()
+ +__sub__()
+ +__xor__()
+}
+
+@enduml
